@@ -1,0 +1,260 @@
+// SANRAKSHAK Mock Data & Simulation State Provider
+
+export const INITIAL_SENSORS = [
+  { id: 'SEN-01', name: 'Toxic Gas Analyzer', type: 'gas_ppm', value: 142.5, unit: 'ppm', normalMin: 0, normalMax: 250, criticalMax: 400, status: 'NORMAL', location: 'Reactor Unit 3' },
+  { id: 'SEN-02', name: 'Core Thermal Sensor', type: 'temperature', value: 38.2, unit: '°C', normalMin: 15, normalMax: 50, criticalMax: 75, status: 'NORMAL', location: 'Exothermic Vessel A' },
+  { id: 'SEN-03', name: 'Vessel Pressure Barometer', type: 'pressure', value: 4.8, unit: 'bar', normalMin: 3.0, normalMax: 6.0, criticalMax: 8.0, status: 'NORMAL', location: 'Main Feedline' },
+  { id: 'SEN-04', name: 'Ambient Hygrometer', type: 'humidity', value: 54.0, unit: '%', normalMin: 30, normalMax: 70, criticalMax: 85, status: 'NORMAL', location: 'Perimeter West' },
+  { id: 'SEN-05', name: 'Anemometer Wind Speed', type: 'wind_speed', value: 12.4, unit: 'km/h', normalMin: 0, normalMax: 25, criticalMax: 45, status: 'NORMAL', location: 'Meteorological Tower' },
+  { id: 'SEN-06', name: 'Wind Vane Vector', type: 'wind_direction', value: 65, unit: '°', normalMin: 0, normalMax: 360, criticalMax: 360, status: 'NORMAL', location: 'Meteorological Tower' },
+  { id: 'SEN-07', name: 'Seismic & Acoustic Vibrometer', type: 'vibration', value: 1.2, unit: 'mm/s', normalMin: 0, normalMax: 3.0, criticalMax: 5.5, status: 'NORMAL', location: 'Turbine Base 2' },
+  { id: 'SEN-08', name: 'Industrial AQI Index', type: 'air_quality', value: 88, unit: 'AQI', normalMin: 0, normalMax: 150, criticalMax: 300, status: 'NORMAL', location: 'Perimeter East' },
+  { id: 'SEN-09', name: 'Volatile Organic Compound Detector', type: 'voc', value: 18.3, unit: 'ppb', normalMin: 0, normalMax: 50, criticalMax: 120, status: 'NORMAL', location: 'Storage Tank B4' }
+];
+
+export const POPULATION_ZONES = [
+  {
+    id: 'ZONE-A',
+    name: 'Zone A - North Residential Colony',
+    type: 'residential',
+    lat: 19.0820,
+    lng: 72.8810,
+    population: 2800,
+    safeCapacity: 1500,
+    carryingCapacityRatio: 1.86,
+    distanceKm: 0.8,
+    bearingDeg: 45,
+    riskLevel: 'LOW',
+    hazardZone: 'YELLOW',
+    evacuationPriority: 'MODERATE',
+    designatedShelter: 'Community Center A',
+    shelterCapacity: 1000,
+    evacuationRoute: 'Expressway North - Corridor 1',
+    estEvacuationTimeMin: 22
+  },
+  {
+    id: 'ZONE-B',
+    name: 'Zone B - Northeast Habitation Sector',
+    type: 'residential',
+    lat: 19.0795,
+    lng: 72.8865,
+    population: 3450,
+    safeCapacity: 2000,
+    carryingCapacityRatio: 1.72,
+    distanceKm: 1.2,
+    bearingDeg: 60,
+    riskLevel: 'LOW',
+    hazardZone: 'YELLOW',
+    evacuationPriority: 'HIGH',
+    designatedShelter: 'High School B Ground',
+    shelterCapacity: 1800,
+    evacuationRoute: 'Ring Road East - Corridor 4',
+    estEvacuationTimeMin: 28
+  },
+  {
+    id: 'ZONE-C',
+    name: 'Zone C - East Commercial Hub',
+    type: 'commercial',
+    lat: 19.0760,
+    lng: 72.8840,
+    population: 860,
+    safeCapacity: 700,
+    carryingCapacityRatio: 1.22,
+    distanceKm: 0.9,
+    bearingDeg: 90,
+    riskLevel: 'LOW',
+    hazardZone: 'GREEN',
+    evacuationPriority: 'LOW',
+    designatedShelter: 'Mall Shelter C',
+    shelterCapacity: 600,
+    evacuationRoute: 'Eastern Express Link',
+    estEvacuationTimeMin: 14
+  },
+  {
+    id: 'ZONE-D',
+    name: 'Zone D - Southeast Dense Housing',
+    type: 'residential',
+    lat: 19.0720,
+    lng: 72.8830,
+    population: 1240,
+    safeCapacity: 800,
+    carryingCapacityRatio: 1.55,
+    distanceKm: 1.0,
+    bearingDeg: 135,
+    riskLevel: 'LOW',
+    hazardZone: 'GREEN',
+    evacuationPriority: 'LOW',
+    designatedShelter: 'Temple Hall D',
+    shelterCapacity: 500,
+    evacuationRoute: 'SE Bypass Road',
+    estEvacuationTimeMin: 18
+  },
+  {
+    id: 'ZONE-E',
+    name: 'Zone E - South District',
+    type: 'residential',
+    lat: 19.0710,
+    lng: 72.8777,
+    population: 1950,
+    safeCapacity: 1800,
+    carryingCapacityRatio: 1.08,
+    distanceKm: 0.7,
+    bearingDeg: 180,
+    riskLevel: 'LOW',
+    hazardZone: 'GREEN',
+    evacuationPriority: 'LOW',
+    designatedShelter: 'Stadium E Arena',
+    shelterCapacity: 2000,
+    evacuationRoute: 'SV Road South',
+    estEvacuationTimeMin: 12
+  },
+  {
+    id: 'ZONE-F',
+    name: 'Zone F - West Industrial Buffer',
+    type: 'industrial',
+    lat: 19.0760,
+    lng: 72.8720,
+    population: 420,
+    safeCapacity: 400,
+    carryingCapacityRatio: 1.05,
+    distanceKm: 0.6,
+    bearingDeg: 270,
+    riskLevel: 'LOW',
+    hazardZone: 'GREEN',
+    evacuationPriority: 'LOW',
+    designatedShelter: 'Factory Shelter F',
+    shelterCapacity: 300,
+    evacuationRoute: 'Western Highway',
+    estEvacuationTimeMin: 10
+  }
+];
+
+export const PLANT_ORIGIN = {
+  lat: 19.0760,
+  lng: 72.8777,
+  name: 'Sanrakshak Petrochemical Complex Alpha',
+  city: 'Trombay-Kurla Industrial Corridor, Mumbai'
+};
+
+export const SIMULATION_STAGES = [
+  {
+    stage: 0,
+    name: 'Normal Operations Baseline',
+    gas_ppm: 140,
+    temperature: 38,
+    pressure: 4.8,
+    vibration: 1.2,
+    wind_speed: 12,
+    wind_direction: 60,
+    riskScore: 18,
+    hazardLevel: 'LOW',
+    hazardPlumeRadiusKm: 0.2,
+    affectedZones: [],
+    redZones: [],
+    description: 'All industrial parameters within statutory CPCB safety margins. Continuous IoT telemetry stable.'
+  },
+  {
+    stage: 1,
+    name: 'Micro-Vibration Anomaly in Pump 4',
+    gas_ppm: 165,
+    temperature: 42,
+    pressure: 5.1,
+    vibration: 2.8,
+    wind_speed: 13,
+    wind_direction: 58,
+    riskScore: 28,
+    hazardLevel: 'LOW',
+    hazardPlumeRadiusKm: 0.3,
+    affectedZones: [],
+    redZones: [],
+    description: 'Minor bearing oscillation detected in exothermic transfer pump. Risk remains within baseline tolerance.'
+  },
+  {
+    stage: 2,
+    name: 'Secondary Valve Micro-Leak',
+    gas_ppm: 215,
+    temperature: 47,
+    pressure: 5.6,
+    vibration: 3.1,
+    wind_speed: 14,
+    wind_direction: 55,
+    riskScore: 42,
+    hazardLevel: 'MODERATE',
+    hazardPlumeRadiusKm: 0.45,
+    affectedZones: ['ZONE-F'],
+    redZones: [],
+    description: 'VOC and gas sensors indicate slight fugitive release. Containment seal pressure declining.'
+  },
+  {
+    stage: 3,
+    name: 'Temperature Spike & Pressure Build-up',
+    gas_ppm: 290,
+    temperature: 58,
+    pressure: 6.4,
+    vibration: 3.8,
+    wind_speed: 16,
+    wind_direction: 52,
+    riskScore: 59,
+    hazardLevel: 'HIGH',
+    hazardPlumeRadiusKm: 0.7,
+    affectedZones: ['ZONE-F', 'ZONE-A'],
+    redZones: [],
+    description: 'Vessel reaction rate exceeding thermal dissipation limits. Automated cooling jackets active.'
+  },
+  {
+    stage: 4,
+    name: 'Severe Flange Failure — Plume Release',
+    gas_ppm: 430,
+    temperature: 76,
+    pressure: 7.9,
+    vibration: 4.9,
+    wind_speed: 21,
+    wind_direction: 50,
+    riskScore: 78,
+    hazardLevel: 'HIGH',
+    hazardPlumeRadiusKm: 1.1,
+    affectedZones: ['ZONE-A', 'ZONE-B', 'ZONE-F'],
+    redZones: ['ZONE-A'],
+    description: 'Toxic gas concentration exceeds critical IDLH threshold. Wind vector propagating vapor cloud northeast toward Zone A.'
+  },
+  {
+    stage: 5,
+    name: 'CRITICAL HAZARD: Red Zone Declaration',
+    gas_ppm: 580,
+    temperature: 92,
+    pressure: 9.3,
+    vibration: 5.8,
+    wind_speed: 26,
+    wind_direction: 48,
+    riskScore: 94,
+    hazardLevel: 'CRITICAL',
+    hazardPlumeRadiusKm: 1.6,
+    affectedZones: ['ZONE-A', 'ZONE-B', 'ZONE-C'],
+    redZones: ['ZONE-A', 'ZONE-B'],
+    description: 'MAJOR INCIDENT: Carrying capacity breached in Zone A & Zone B. Immediate priority relocation initiated for 6,250 residents.'
+  }
+];
+
+export const INITIAL_ALERTS = [
+  {
+    id: 'ALT-1092',
+    timestamp: 'Just now',
+    type: 'SYSTEM',
+    severity: 'LOW',
+    message: 'SANRAKSHAK AI Engine initialized. 9 sensor feeds active and synchronized.'
+  },
+  {
+    id: 'ALT-1091',
+    timestamp: '2 mins ago',
+    type: 'CALIBRATION',
+    severity: 'LOW',
+    message: 'Gas Chromatography baseline calibration completed with 99.4% precision score.'
+  },
+  {
+    id: 'ALT-1090',
+    timestamp: '15 mins ago',
+    type: 'WEATHER',
+    severity: 'LOW',
+    message: 'Meteorological telemetry: Wind vector 12.4 km/h at 65° (ENE). Dispersion conditions neutral.'
+  }
+];
