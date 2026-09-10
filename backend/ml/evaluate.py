@@ -113,8 +113,8 @@ class ModelEvaluator:
             }
         }
 
-        print(f"[Evaluator] {model_name}: CV F1={cv_f1:.4f}±{cv_f1_std:.4f}, "
-              f"Train F1={train_f1:.4f}, Gap={train_val_gap:.4f} → {diagnosis}")
+        print(f"[Evaluator] {model_name}: CV F1={cv_f1:.4f} +/- {cv_f1_std:.4f}, "
+              f"Train F1={train_f1:.4f}, Gap={train_val_gap:.4f} -> {diagnosis}")
 
         return metrics
 

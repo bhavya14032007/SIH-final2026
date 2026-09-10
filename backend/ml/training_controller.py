@@ -101,7 +101,7 @@ class TrainingController:
         print("\n--- Baseline Experiments ---")
         baselines = {
             'LogisticRegression': LogisticRegression(
-                max_iter=1000, random_state=42, multi_class='multinomial'
+                max_iter=1000, random_state=42
             ),
             'RandomForestClassifier': RandomForestClassifier(
                 n_estimators=100, max_depth=None, random_state=42
